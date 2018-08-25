@@ -1,5 +1,6 @@
 .body-border{
     padding: 25px;
+    padding-top: 0px;
     border: 1px solid #dddfe2;
     background-color: #ffffff;
 }

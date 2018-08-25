@@ -15,7 +15,7 @@ def calculate():
         user = form.twitter.data
         flash('Twitter input ' + user)
         return redirect(url_for('results', user=user))
-    return render_template('calculate.html', title='Calculate Sentiment', form=form)
+    return render_template('calculate.html', title='Calculate', form=form)
 
 @flapp.route('/about')
 def about():
