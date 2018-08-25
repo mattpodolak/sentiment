@@ -1,9 +1,9 @@
 from app import flapp
 from app.forms import InputForm
 from flask import render_template, flash, redirect, url_for
-from app.indico import single_calc, batch_calc
+from app.indico import single_calc, batch_calc, avg_batch_calc
 from app.search import news_search
-
+from datetime import datetime, timedelta
 
 @flapp.route('/')
 @flapp.route('/index')
@@ -25,10 +25,15 @@ def about():
 
 @flapp.route('/results/<search_input>')
 def results(search_input):
-    # insert news scrape here
-    scan = news_search(search_input)
-    # insert indico calls here
-    #labels = ["Jan 20","Jan 21","Jan 22","Jan 23","Jan 24","Jan 25","Jan 26","Jan 27"]
-    labels = [x for x in range(0, 31)]
-    values = batch_calc(scan)
+    days_to_subtract = 30
+    today = datetime.today()
+    labels = []
+    values = []
+    for i in range(0, 31)
+        date = today - timedelta(days=days_to_subtract-i)
+        date_str = str(date.year) + '-' + str(date.month) + '-' + str(date.day)
+        labels.append(date_str)
+        scan = news_search(search_input, date_str)
+        values.append(avg_batch_calc(scan))
+    
     return render_template("results.html", labels=labels, values=values, scan=scan)

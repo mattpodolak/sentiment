@@ -1,9 +1,9 @@
 import requests
-def news_search(keyword):
+def news_search(keyword, date_str):
     url = ('https://newsapi.org/v2/everything?'
         'q='+keyword+'&'
         'from=2018-08-20&'
-        'to=2018-08-21&'
+        'to=2018-08-20&'
         'language=en&'
         'sortBy=popularity&'
         'apiKey=a81c4da648bd4945ba2a4d15413ff608')

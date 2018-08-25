@@ -5,3 +5,8 @@ def single_calc(input_string):
 
 def batch_calc(input_array):
     return indicoio.sentiment_hq(input_array)
+
+def avg_batch_calc(input_array):
+    values = batch_calc(input_array)
+    mean = sum(values)/len(values)
+    return mean
