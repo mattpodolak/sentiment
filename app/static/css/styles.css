@@ -8,3 +8,9 @@
 body{
     background-color: #e9ebee;
 }
+
+.chart-border{
+    padding: 0px;
+    border: 1px solid #dddfe2;
+    background-color: #ffffff;
+}

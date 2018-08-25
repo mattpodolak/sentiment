@@ -3,6 +3,7 @@ from app.forms import InputForm
 from flask import render_template, flash, redirect, url_for
 from app.indico import single_calc
 
+
 @flapp.route('/')
 @flapp.route('/index')
 def index():
@@ -25,4 +26,8 @@ def about():
 def results(user):
     # insert twitter scrap here
     # insert indico calls here
-    return render_template('results.html', title='Results', user=user)
+    # insert graph here
+    labels = ["January","February","March","April","May","June","July","August"]
+    values = [10,9,8,7,6,4,7,8]
+
+    return render_template("results.html", labels=labels, values=values)
