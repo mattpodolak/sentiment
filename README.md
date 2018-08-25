@@ -2,6 +2,8 @@
     - [Creating Project](#creating-project)
     - [Setting Up](#setting-up)
     - [Running Your App](#running-your-app)
+- [FAQ](#faq)
+    - [Updating Requirements](#updating-requirements)
 
 # Getting Started
 
@@ -39,3 +41,13 @@ Activate venv (if not already activated) and run
 > sentiment-venv\Scripts\activate
 > flask run
 ```
+
+# FAQ
+## Updating Requirements
+When you add a new package, you can update the requirements using:
+```bash
+> pip freeze > requirements.txt
+```
+Please copy over the following:
+psycopg2
+gunicorn

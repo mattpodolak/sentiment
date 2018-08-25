@@ -1,7 +1,7 @@
 from app import flapp
 from app.forms import InputForm
 from flask import render_template, flash, redirect, url_for
-from app.indico import single_calc
+from app.indico import single_calc, batch_calc
 from app.twitter_search import twittersearch
 
 
@@ -28,7 +28,7 @@ def results(user):
     # insert twitter scrap here
     # insert indico calls here
     # insert graph here
-    labels = ["January","February","March","April","May","June","July","August"]
-    values = [10,9,8,7,6,4,7,8]
+    labels = ["Jan 20","Jan 21","Jan 22","Jan 23","Jan 24","Jan 25","Jan 26","Jan 27"]
+    values = batch_calc(["i hate mcdons", "i love mcdons", "mcdons is alright", "idk what mcdons is", "i hate mcdons", "i love mcdons", "mcdons is alright", "idk what mcdons is"])
 
     return render_template("results.html", labels=labels, values=values)
