@@ -27,13 +27,18 @@ def about():
 def results(search_input):
     days_to_subtract = 30
     today = datetime.today()
+    all_scans = []
     labels = []
     values = []
-    for i in range(0, 31)
+    for i in range(0, 31):
         date = today - timedelta(days=days_to_subtract-i)
         date_str = str(date.year) + '-' + str(date.month) + '-' + str(date.day)
         labels.append(date_str)
         scan = news_search(search_input, date_str)
-        values.append(avg_batch_calc(scan))
+        all_scans.append(scan)
+        if scan:
+            values.append(avg_batch_calc(scan))
+        else:
+            values.append(0)           
     
-    return render_template("results.html", labels=labels, values=values, scan=scan)
+    return render_template("results.html", labels=labels, values=values, scan=all_scans)
