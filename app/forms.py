@@ -3,5 +3,5 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import ValidationError, DataRequired, Length
 
 class InputForm(FlaskForm):
-    email = StringField('Email', validators=[DataRequired()])
-    submit = SubmitField('Sign In')
+    twitter = StringField('Enter Twitter Account', validators=[DataRequired()])
+    submit = SubmitField('Process Data')
