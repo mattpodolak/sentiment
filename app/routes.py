@@ -14,13 +14,15 @@ def calculate():
     if form.validate_on_submit():
         user = form.twitter.data
         flash('Twitter input ' + user)
-        return redirect(url_for('results', sentiment=user))
+        return redirect(url_for('results', user=user))
     return render_template('calculate.html', title='Calculate Sentiment', form=form)
 
 @flapp.route('/about')
 def about():
     return render_template('about.html', title='About')
 
-@flapp.route('/results/<sentiment>')
-def results(sentiment):
-    return render_template('results.html', title='Results', sentiment=sentiment)
+@flapp.route('/results/<user>')
+def results(user):
+    # insert twitter scrap here
+    # insert indico calls here
+    return render_template('results.html', title='Results', user=user)
