@@ -30,5 +30,4 @@ def results(user):
     # insert graph here
     labels = ["Jan 20","Jan 21","Jan 22","Jan 23","Jan 24","Jan 25","Jan 26","Jan 27"]
     values = batch_calc(["i hate mcdons", "i love mcdons", "mcdons is alright", "idk what mcdons is", "i hate mcdons", "i love mcdons", "mcdons is alright", "idk what mcdons is"])
-
     return render_template("results.html", labels=labels, values=values)
