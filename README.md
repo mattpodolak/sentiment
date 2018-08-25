@@ -7,8 +7,8 @@
 
 ## Creating Project
 ```bash
-> git clone 
-> git remote add origin 
+> git clone https://github.com/mattpodolak/sentiment.git
+> git remote add origin https://github.com/mattpodolak/sentiment.git
 ```
 
 ## Setting Up
