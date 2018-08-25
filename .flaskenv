@@ -1,1 +1,2 @@
 FLASK_APP=sentiment.py
+INDICO_API_KEY=5c0a8a6354c35c4ee22b34aa4f3d44f2

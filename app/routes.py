@@ -1,11 +1,13 @@
 from app import flapp
 from app.forms import InputForm
 from flask import render_template, flash
+from app.indico import single_calc
 
 @flapp.route('/')
 @flapp.route('/index')
 def index():
-    return render_template('index.html', title='Home')
+    sent = single_calc(True)
+    return render_template('index.html', title='Home', num=sent)
 
 @flapp.route('/about')
 def about():

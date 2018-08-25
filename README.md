@@ -28,6 +28,11 @@ Install required packages
 > pip install -r requirements.txt
 ```
 
+Install Pillow (PIL)
+```bash
+> easy_install Pillow
+```
+
 ## Running your app
 Activate venv (if not already activated) and run
 ```bash
