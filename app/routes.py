@@ -2,7 +2,7 @@ from app import flapp
 from app.forms import InputForm
 from flask import render_template, flash, redirect, url_for
 from app.indico import single_calc
-from app.twitter_search import twittersearch
+from app.twitter_search import news_search
 
 
 @flapp.route('/')
