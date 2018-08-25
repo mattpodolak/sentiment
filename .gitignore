@@ -1,0 +1,6 @@
+# packages and venv
+/sentiment-venv
+
+# cache
+/__pycache__
+/app/__pycache__
