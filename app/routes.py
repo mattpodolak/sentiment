@@ -15,7 +15,7 @@ def calculate():
     form = InputForm()
     if form.validate_on_submit():
         user = form.twitter.data
-        flash('Twitter input ' + user)
+        flash('Input ' + user)
         return redirect(url_for('results', user=user))
     return render_template('calculate.html', title='Calculate', form=form)
 
@@ -30,5 +30,5 @@ def results(user):
     # insert graph here
     labels = ["January","February","March","April","May","June","July","August"]
     values = [10,9,8,7,6,4,7,8]
-
+    news_search(user)
     return render_template("results.html", labels=labels, values=values)
