@@ -9,7 +9,8 @@ def news_search(keyword):
         'apiKey=a81c4da648bd4945ba2a4d15413ff608')
     response = requests.get(url)
     r = response.json()
+    title_array = []
     for titles in r['articles']:
-        print(titles['title'])
-    print('TOTAL ENTRIES:', r['totalResults'])
-    print(keyword)
+        title_array.append(titles['title'])
+    title_array = title_array[0:31]
+    return title_array
