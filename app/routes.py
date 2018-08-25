@@ -14,17 +14,17 @@ def index():
 def calculate():
     form = InputForm()
     if form.validate_on_submit():
-        user = form.twitter.data
-        flash('Input ' + user)
-        return redirect(url_for('results', user=user))
+        search_input = form.search_input.data
+        flash('Input ' + search_input)
+        return redirect(url_for('results', search_input=search_input))
     return render_template('calculate.html', title='Calculate', form=form)
 
 @flapp.route('/about')
 def about():
     return render_template('about.html', title='About')
 
-@flapp.route('/results/<user>')
-def results(user):
+@flapp.route('/results/<search_input>')
+def results(search_input):
     # insert twitter scrap here
     # insert indico calls here
     # insert graph here
