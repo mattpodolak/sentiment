@@ -35,7 +35,7 @@ def results(search_input):
         date_str = str(date.year) + '-' + str(date.month) + '-' + str(date.day)
         labels.append(date_str)
         scan, scan_desc = news_search(search_input, date_str)
-        all_scans.append(scan)
+        all_scans.append({'data': scan, 'date': date_str})
         if scan:
             weight = batch_relevance(scan, scan_desc, search_input)
 
