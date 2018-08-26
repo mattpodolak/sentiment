@@ -1,7 +1,7 @@
 from app import flapp
 from app.forms import InputForm
 from flask import render_template, flash, redirect, url_for
-from app.indico import single_calc, batch_calc, avg_batch_calc
+from app.indico import single_calc, batch_calc, avg_batch_calc, batch_relevance, weight_batch_calc
 from app.search import news_search
 from datetime import datetime, timedelta
 
@@ -34,10 +34,13 @@ def results(search_input):
         date = today - timedelta(days=days_to_subtract-i)
         date_str = str(date.year) + '-' + str(date.month) + '-' + str(date.day)
         labels.append(date_str)
-        scan = news_search(search_input, date_str)
+        scan, scan_desc = news_search(search_input, date_str)
         all_scans.append(scan)
         if scan:
-            values.append(avg_batch_calc(scan))
+            weight = batch_relevance(scan, scan_desc, search_input)
+
+            #values.append(avg_batch_calc(scan))
+            values.append(weight_batch_calc(scan, weight))
         else:
             values.append(0)           
     

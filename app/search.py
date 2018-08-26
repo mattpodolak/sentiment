@@ -10,7 +10,10 @@ def news_search(keyword, date_str):
     response = requests.get(url)
     r = response.json()
     title_array = []
+    desc_array = []
     for titles in r['articles']:
         title_array.append(titles['title'])
+        desc_array.append(titles['description'])
     title_array = title_array[0:31]
-    return title_array
+    desc_array = desc_array[0:31]
+    return title_array, desc_array
