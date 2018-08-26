@@ -43,9 +43,9 @@ def results(search_input):
             #values.append(weight_batch_calc(scan, weight))
             mean, min_info, max_info = weight_batch_calc_desc(scan, scan_desc, weight)
             values.append(mean)
+            all_scans.append({'data': scan, 'date': date_str, 'min':min_info[0], 'min_article':scan[min_info[1]], 'min_rel':weight[min_info[1]][0], 'max':max_info[0], 'max_article':scan[max_info[1]], 'max_rel':weight[max_info[1]][0]})
         else:
             values.append(0)    
-
-        all_scans.append({'data': scan, 'date': date_str, 'min':min_info[0], 'min_article':scan[min_info[1]], 'min_rel':weight[min_info[1]][0], 'max':max_info[0], 'max_article':scan[max_info[1]], 'max_rel':weight[max_info[1]][0]})       
+            all_scans.append({'data': scan, 'date': date_str})       
     
     return render_template("results.html", labels=labels, values=values, scan=all_scans)

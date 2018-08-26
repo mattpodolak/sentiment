@@ -18,6 +18,8 @@
                                 <p>{{items.min_article}}</p>
                                 <p>Max: {{items.max}} - Relevance {{items.max_rel}}</p>
                                 <p>{{items.max_article}}</p>
+                            {% else %}
+                                <p>No articles found for this date</p>
                             {% endif %}
                             <!--<li>{{items.data}}</li>-->
                         {% endfor %}
