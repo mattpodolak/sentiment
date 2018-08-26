@@ -6,7 +6,7 @@ def news_search(keyword, date_str):
         'to='+date_str+'&'
         'language=en&'
         'sortBy=popularity&'
-        'apiKey=b33925218d90423a9e742920006e9c75')
+        'apiKey=7c97cfaad1d34fcfbe46d5ba2b63a855')
     response = requests.get(url)
     r = response.json()
     title_array = []

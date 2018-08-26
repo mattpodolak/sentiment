@@ -46,6 +46,6 @@ def results(search_input):
         else:
             values.append(0)    
 
-        all_scans.append({'data': scan, 'date': date_str, 'min':min_info[0], 'min_article':scan[min_info[1]], 'min_rel':weight[min_info[1]], 'max':max_info[0], 'max_article':scan[max_info[1]], 'max_rel':weight[max_info[1]]})       
+        all_scans.append({'data': scan, 'date': date_str, 'min':min_info[0], 'min_article':scan[min_info[1]], 'min_rel':weight[min_info[1]][0], 'max':max_info[0], 'max_article':scan[max_info[1]], 'max_rel':weight[max_info[1]][0]})       
     
     return render_template("results.html", labels=labels, values=values, scan=all_scans)
