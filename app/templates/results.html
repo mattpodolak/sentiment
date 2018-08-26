@@ -10,9 +10,16 @@
                 <div>
                     <h1>Results</h1><!-- bar chart canvas element --><canvas id="chart" width="600" height="400"></canvas>
                     <ul>Article titles:
+                        <br>
                         {% for items in scan %}
                             <b>{{items.date}}</b>
-                            <li>{{items.data}}</li>
+                            {% if items.min %}
+                                <p>Min: {{items.min}} - Relevance {{items.min_rel}}</p>
+                                <p>{{items.min_article}}</p>
+                                <p>Max: {{items.max}} - Relevance {{items.max_rel}}</p>
+                                <p>{{items.max_article}}</p>
+                            {% endif %}
+                            <!--<li>{{items.data}}</li>-->
                         {% endfor %}
                     </ul>
                     <script>
